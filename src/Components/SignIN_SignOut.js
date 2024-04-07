@@ -3,7 +3,6 @@ import Header from './Header';
 import { validateForm } from '../utils/validateForm';
 import { createUserWithEmailAndPassword,signInWithEmailAndPassword ,updateProfile } from "firebase/auth";
 import { auth } from '../utils/firebase';
-import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addUser } from '../utils/Redux/Slices/userSlice';
 
@@ -18,8 +17,8 @@ const SignINSignOut = () => {
   const handleClick=()=>{
     setIsSignIn(!isSignIn);
   }
-  const navigate=useNavigate();
-  const dispatch=useDispatch
+
+  const dispatch=useDispatch()
   const validataForm=()=>{
     const validationStatus=validateForm(emailRef.current.value,passwordRef.current.value,fullRef?.current?.value,rePasswordRef?.current?.value,isSignIn);
     setValidationErrorMessage(validationStatus);
@@ -39,10 +38,10 @@ const SignINSignOut = () => {
 
               const {uid,email,displayName} = auth.currentUser;
               dispatch(addUser({uid:uid,email:email,displayName:displayName}))
-              navigate("/browser");
+            //  navigate("/browser");
 
             }).catch((error) => {
-              // An error occurred
+              // An error occurred  
               // ...
             });
           })
@@ -60,7 +59,7 @@ const SignINSignOut = () => {
         // Signed in 
        // const user = userCredential.user;
         // ...
-        navigate("/browser");
+      //  navigate("/browser");
       })
       .catch((error) => {
         const errorMessage = error.message;
