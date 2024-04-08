@@ -71,9 +71,9 @@ const SignINSignOut = () => {
     <div>
       <Header/>
       <div className="absolute h-full w-full">
-         <img className="h-full w-full" src="https://assets.nflxext.com/ffe/siteui/vlv3/7ca5b7c7-20aa-42a8-a278-f801b0d65fa1/fb548c0a-8582-43c5-9fba-cd98bf27452f/IN-en-20240326-popsignuptwoweeks-perspective_alpha_website_small.jpg" alt="bg"/>
+         <img className="md:h-full md:w-full h-screen object-cover" src="https://assets.nflxext.com/ffe/siteui/vlv3/7ca5b7c7-20aa-42a8-a278-f801b0d65fa1/fb548c0a-8582-43c5-9fba-cd98bf27452f/IN-en-20240326-popsignuptwoweeks-perspective_alpha_website_small.jpg" alt="bg"/>
       </div>
-      <form onSubmit={(e)=>e.preventDefault()} className='absolute w-3/12 bg-black left-0 right-0 m-auto my-24 text-white p-4 rounded-md bg-opacity-80 sm:w-80'>
+      <form onSubmit={(e)=>e.preventDefault()} className='absolute md:w-3/12 w-10/12 bg-black left-0 right-0 m-auto my-24 text-white p-4 rounded-md bg-opacity-80 sm:w-80'>
           <h1 className='text-xl my-2'>{isSignIn?"Sign In":"Sign Up"}</h1>
           
           {!isSignIn &&  <input 
