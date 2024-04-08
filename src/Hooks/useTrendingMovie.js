@@ -1,7 +1,7 @@
 
 import movieApiOptions from '../utils/constants.js'
 import { useDispatch } from 'react-redux';
-import { addPopular, addTrending } from '../utils/Redux/Slices/movieSlice.js';
+import {addTrending } from '../utils/Redux/Slices/movieSlice.js';
 import { useEffect } from 'react';
 
 const useTrendingMovie=()=>{
@@ -9,7 +9,6 @@ const useTrendingMovie=()=>{
     const fetchMovies=async()=>{
       const response = await fetch('https://api.themoviedb.org/3/trending/movie/day?language=en-US', movieApiOptions);
       const movieData= await response.json()
-      console.log(movieData);
       dispatch(addTrending(movieData?.results));
     }
   
